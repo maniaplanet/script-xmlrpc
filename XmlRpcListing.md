@@ -1215,6 +1215,196 @@ Callbacks
 	]
 	```
 	
+### Maniaplanet.WarmUp.Start
+
+* Name: Maniaplanet.WarmUp.Start
+* Type: CallbackArray
+* Description: Callback sent when the warmup starts.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{}"
+	]
+	```
+
+### Maniaplanet.WarmUp.End
+
+* Name: Maniaplanet.WarmUp.End
+* Type: CallbackArray
+* Description: Callback sent when the warmup ends.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{}"
+	]
+	```
+
+### Maniaplanet.WarmUp.Status
+
+* Name: Maniaplanet.WarmUp.Status
+* Type: CallbackArray
+* Description: The status of the warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"active": true //< true if a warmup is ongoing, false otherwise
+		}"
+	]
+	```
+
+### Shootmania.Combo.Pause
+
+* Name: Shootmania.Combo.Pause
+* Type: CallbackArray
+* Description: The status of the pause.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"active": true //< true if a pause is active, false otherwise
+		}"
+	]
+	```
+
+### Shootmania.Elite.StartTurn
+
+* Name: Shootmania.Elite.StartTurn
+* Type: CallbackArray
+* Description: Information about the starting turn.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"attacker": "login1", //< the login of the attacker
+			"defenders": ["login2", "login3", "login4"] //< the logins of the defenders
+		}"
+	]
+	```
+
+### Shootmania.Elite.EndTurn
+
+* Name: Shootmania.Elite.EndTurn
+* Type: CallbackArray
+* Description: Information about the ending turn.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"victorytype": 1 //< Describe how the turn was won. 1 = time limit, 2 = capture, 3 = attacker eliminated, 4 = defenders eliminated
+		}"
+	]
+	```
+
+### Shootmania.Joust.OnReload
+
+* Name: Shootmania.Joust.OnReload
+* Type: CallbackArray
+* Description: Callback sent when a player capture a pole to reload its weapons.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"player": "PlayerLogin1" //< Login of the player who reloaded
+		}"
+	]
+	```
+
+### Shootmania.Joust.SelectedPlayers
+
+* Name: Shootmania.Joust.SelectedPlayers
+* Type: CallbackArray
+* Description: Callback sent at the beginning of the round with the logins of the players selected to play the round.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"players": ["PlayerLogin1", "PlayerLogin2"] //< Logins of the two players selected for the round
+		}"
+	]
+	```
+
+### Shootmania.Joust.RoundResult
+
+* Name: Shootmania.Joust.RoundResult
+* Type: CallbackArray
+* Description: Callback sent at the end of the round with the scores of the two players.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"players": [
+				{
+					"login": "PlayerLogin1",
+					"score": 5
+				}, {
+					"login": "PlayerLogin2",
+					"score": 7
+				}
+			]
+		}"
+	]
+	```
+
+### Shootmania.Royal.Points
+
+* Name: Shootmania.Royal.Points
+* Type: CallbackArray
+* Description: Callback sent when a player scores some points.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"login": "PlayerLogin", //< Login of the player who scored the points
+			"type": "Pole", //< The type of points. Can be: Pole, Hit or Survival
+			"points": 12 //< The number of points scored
+		}"
+	]
+	```
+
+### Shootmania.Royal.PlayerSpawn
+
+* Name: Shootmania.Royal.PlayerSpawn
+* Type: CallbackArray
+* Description: Callback sent when a player is spawned.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"login": "PlayerLogin", //< Login of the spawned player
+			"respawn": true //< false if it is the initial player spawn in the round. true if it is a respawn.
+		}"
+	]
+	```
+
+### Shootmania.Royal.RoundWinner
+
+* Name: Shootmania.Royal.RoundWinner
+* Type: CallbackArray
+* Description: Callback sent at the end of the round with the login of the winner.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"login": "PlayerLogin" //< Login of the player who won the round
+		}"
+	]
+	```
+
 ### Trackmania.Event.Default
 
 * Name: Trackmania.Event.Default
@@ -1326,6 +1516,8 @@ Callbacks
 			"checkpointinlap": 4, //< Number of checkpoints crossed since the beginning of the lap
 			"isendrace": false, //< Is it the finish line checkpoint
 			"isendlap": false, //< Is it the multilap checkpoint
+			"curracecheckpoints": [1234, 5200, 7580, 9000], //< Checkpoints times since the beginning of the race
+			"curlapcheckpoints": [1420], //< Checkpoints time since the beginning of the lap
 			"blockid": "#123", //< Id of the checkpoint block
 			"speed": 456.45, //< Speed of the player in km/h
 			"distance": 398.49 //< Distance traveled by the player since the beginning of the race
@@ -1440,7 +1632,11 @@ Callbacks
 					"mappoints": 345,
 					"matchpoints": 64,
 					"bestracetime": 456789, //< Best race time in milliseconds
+					"bestracerespawns": 2, //< Number of respawn during best race
+					"bestracecheckpoints": [1230, 7546, 19045, 456789], //< Checkpoints times during best race
 					"bestlaptime": 68942, //< Best lap time in milliseconds
+					"bestlaprespawns": 1, //< Number of respawn during best lap
+					"bestlapcheckpoints": [2458, 9874], //< Checkpoints times during best lap
 					"stuntsscore": 492
 				},
 				{
@@ -1451,7 +1647,11 @@ Callbacks
 					"mappoints": 123,
 					"matchpoints": 32,
 					"bestracetime": 49854, //< Best race time in milliseconds
+					"bestracerespawns": 5, //< Number of respawn during best race
+					"bestracecheckpoints": [3215, 94562, 26845, 49854], //< Checkpoints times during best race
 					"bestlaptime": 23254, //< Best lap time in milliseconds
+					"bestlaprespawns": 2, //< Number of respawn during best lap
+					"bestlapcheckpoints": [4582, 15624], //< Checkpoints times during best lap
 					"stuntsscore": 9874
 				}
 			]
@@ -1665,6 +1865,34 @@ Methods
 	]
 	```
 
+### XmlRpc.BlockCallbacks
+
+* Name: XmlRpc.BlockCallbacks
+* Type: TriggerModeScriptEventArray
+* Description: Block a callback and prevent it from being sent by the script.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"CallbackName",  //< The name of the callback to block
+		"CallbackNameN" //< You can pass as many callbacks as you want
+	]
+	```
+
+### XmlRpc.UnblockCallbacks
+
+* Name: XmlRpc.UnblockCallbacks
+* Type: TriggerModeScriptEventArray
+* Description: Unblock a blocked callback.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"CallbackName", //< The name of the callback to unblock
+		"CallbackNameN" //< You can pass as many callbacks as you want
+	]
+	```
+
 ### XmlRpc.GetCallbackHelp
 
 * Name: XmlRpc.GetCallbackHelp
@@ -1828,6 +2056,100 @@ Methods
 	]
 	```
 	
+### Maniaplanet.WarmUp.Extend
+
+* Name: Maniaplanet.WarmUp.Extend
+* Type: TriggerModeScriptEventArray
+* Description: Extend the duration of any ongoing warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"60000" //< the duration of the extension in milliseconds.
+	]
+	```
+
+### Maniaplanet.WarmUp.Stop
+
+* Name: Maniaplanet.WarmUp.Stop
+* Type: TriggerModeScriptEventArray
+* Description: Stop any ongoing warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[]
+	```
+
+### Maniaplanet.WarmUp.GetStatus
+
+* Name: Maniaplanet.WarmUp.GetStatus
+* Type: TriggerModeScriptEventArray
+* Description: Get the status of the warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Maniaplanet.WarmUp.Status" callback.
+	]
+	```
+
+### Shootmania.Combo.GetPause
+
+* Name: Shootmania.Combo.GetPause
+* Type: TriggerModeScriptEventArray
+* Description: Get the status of the pause.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Shootmania.Combo.Pause" callback.
+	]
+	```
+
+### Shootmania.Combo.SetPause
+
+* Name: Shootmania.Combo.SetPause
+* Type: TriggerModeScriptEventArray
+* Description: Set the status of the pause.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"true", //< true to enable the pause, false to disable it
+		"responseid" //< Facultative id that will be passed to the "Shootmania.Combo.Pause" callback.
+	]
+	```
+
+### Shootmania.Combo.SetTimersPosition
+
+* Name: Shootmania.Combo.SetTimersPosition
+* Type: TriggerModeScriptEventArray
+* Description: Move the spectators' timers UI.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"10.", //< X position
+		"50.5", //< Y position
+		"0." //< Z position
+	]
+	```
+
+### Shootmania.Siege.SetProgressionUIPosition
+
+* Name: Shootmania.Siege.SetProgressionUIPosition
+* Type: TriggerModeScriptEventArray
+* Description: Move the progression UI.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"10.", //< X position
+		"50.5", //< Y position
+		"0." //< Z position
+	]
+	```
+
 ### Trackmania.GetScores
 
 * Name: Trackmania.GetScores
@@ -1954,6 +2276,17 @@ Methods
 * Name: Trackmania.WarmUp.StopRound
 * Type: TriggerModeScriptEventArray
 * Description: Stop the current warm up round.
+* Data:
+	- Version >=2.0.0:
+	```
+	[]
+	```
+	
+### Trackmania.ForceEndRound
+
+* Name: Trackmania.ForceEndRound
+* Type: TriggerModeScriptEventArray
+* Description: Stop the current round. Only available in Cup, Rounds and Team modes.
 * Data:
 	- Version >=2.0.0:
 	```
