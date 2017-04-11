@@ -161,7 +161,8 @@ Callbacks
 	```
 	[
 		"{
-			"restarted": false //< true if the script was restarted
+			"restarted": false, //< true if the script was restarted
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -176,7 +177,8 @@ Callbacks
 	```
 	[
 		"{
-			"restarted": false //< true if the script was restarted
+			"restarted": false, //< true if the script was restarted
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -191,7 +193,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -206,7 +209,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -222,6 +226,8 @@ Callbacks
 	[
 		"{
 			"count": 123, //< Each time this section is played, this number is incremented by one
+			"restarted": false, //< true if the map was restarted, false otherwise
+			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
 				"name": "NameOfTheMap", //< Name of the map
@@ -254,6 +260,8 @@ Callbacks
 	[
 		"{
 			"count": 123, //< Each time this section is played, this number is incremented by one
+			"restarted": false, //< true if the map was restarted, false otherwise
+			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
 				"name": "NameOfTheMap", //< Name of the map
@@ -285,7 +293,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -300,7 +309,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -315,7 +325,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -330,7 +341,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -345,7 +357,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -360,7 +373,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -375,7 +389,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -390,7 +405,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -405,7 +421,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -420,7 +437,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -436,6 +454,7 @@ Callbacks
 	[
 		"{
 			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
 				"name": "NameOfTheMap", //< Name of the map
@@ -468,6 +487,7 @@ Callbacks
 	[
 		"{
 			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
 				"name": "NameOfTheMap", //< Name of the map
@@ -499,7 +519,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -514,7 +535,8 @@ Callbacks
 	```
 	[
 		"{
-			"count": 123 //< Each time this section is played, this number is incremented by one
+			"count": 123, //< Each time this section is played, this number is incremented by one
+			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
 	```
@@ -528,7 +550,9 @@ Callbacks
 	- Version >=2.0.0:
 	```
 	[
-		"{}"
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
 	]
 	```
 
@@ -541,7 +565,9 @@ Callbacks
 	- Version >=2.0.0:
 	```
 	[
-		"{}"
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
 	]
 	```
 
@@ -554,7 +580,9 @@ Callbacks
 	- Version >=2.0.0:
 	```
 	[
-		"{}"
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
 	]
 	```
 
@@ -568,6 +596,7 @@ Callbacks
 	```
 	[
 		"{
+			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
 				"name": "NameOfTheMap", //< Name of the map
@@ -599,6 +628,7 @@ Callbacks
 	```
 	[
 		"{
+			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
 				"name": "NameOfTheMap", //< Name of the map
@@ -629,7 +659,9 @@ Callbacks
 	- Version >=2.0.0:
 	```
 	[
-		"{}"
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
 	]
 	```
 
@@ -642,7 +674,9 @@ Callbacks
 	- Version >=2.0.0:
 	```
 	[
-		"{}"
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
 	]
 	```
 
@@ -655,7 +689,42 @@ Callbacks
 	- Version >=2.0.0:
 	```
 	[
-		"{}"
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
+	]
+	```
+
+### Maniaplanet.Mode.UseTeams
+
+* Name: Maniaplanet.Mode.UseTeams
+* Type: CallbackArray
+* Description: Tell if the game mode uses teams or not.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"teams": true //< true if the game mode uses teams, false otherwise
+		}"
+	]
+	```
+
+### Maniaplanet.WarmUp.Status
+
+* Name: Maniaplanet.WarmUp.Status
+* Type: CallbackArray
+* Description: The status of the warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"available": true, //< true if a warmup is available in the game mode, false otherwise
+			"active": true //< true if a warmup is ongoing, false otherwise
+		}"
 	]
 	```
 
@@ -780,6 +849,23 @@ Callbacks
 	]
 	```
 	
+### Maniaplanet.Pause.Status
+
+* Name: Maniaplanet.Pause.Status
+* Type: CallbackArray
+* Description: The status of the pause.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"available": true, //< true if a pause is available in the game mode, false otherwise
+			"active": true //< true if there is an ongoing pause, false otherwise
+		}"
+	]
+	```
+
 ### Shootmania.Event.Default
 
 * Name: Shootmania.Event.Default
@@ -828,6 +914,8 @@ Callbacks
 			"victim": "VictimLogin", //< Login of the player who got hit
 			"weapon": 2, //< Id of the weapon [1-Laser, 2-Rocket, 3-Nucleus, 5-Arrow]
 			"damage": 100, //< Amount of damaged done by the hit
+			"points": 2, //< Amount of points scored by the shooter
+			"distance": 45.578, //< Distance between the victim and the shooter at the time of the hit
 			"shooterposition": { "x": 19.3, "y": 9.3", "z": 59.9 }, //< Position of the shooter when his projectile hits the victim
 			"victimposition": { "x": 87.6, "y": 10.0, "z": 84.5 } //< Position of the victim when he's hit by the projectile
 		}"
@@ -869,6 +957,7 @@ Callbacks
 			"shooter": "ShooterLogin", //< Login of the player who eliminated the victim
 			"victim": "VictimLogin", //< Login of the player who got eliminated
 			"weapon": 2, //< Id of the weapon [1-Laser, 2-Rocket, 3-Nucleus, 5-Arrow]
+			"distance": 65.948, //< Distance between the victim and the shooter at the time of the elimination
 			"shooterposition": { "x": 19.3, "y": 9.3", "z": 59.9 }, //< Position of the shooter when the victim is eliminated
 			"victimposition": { "x": 87.6, "y": 10.0, "z": 84.5 } //< Position of the victim when he's eliminated
 		}"
@@ -1112,7 +1201,7 @@ Callbacks
 		"{
 			"time": 123456 //< Server time when the event occured,
 			"login": "PlayerLogin", //< Login of the player who requested a new action
-			"actionchange": "1" //< Can be -1 (request previous action) or 1 (request next action)
+			"actionchange": 1 //< Can be -1 (request previous action) or 1 (request next action)
 		}"
 	]
 	```
@@ -1141,7 +1230,7 @@ Callbacks
 					"matchpoints": 9,
 				},
 				{
-					"id": 0,
+					"id": 1,
 					"name": "red",
 					"roundpoints": 365,
 					"mappoints": 45,
@@ -1154,23 +1243,25 @@ Callbacks
 					"name": "Player#1",
 					"rank": 1, //< Rank of the player in the match
 					"roundpoints": 456,
-					"mappoints": 345
+					"mappoints": 345,
+					"matchpoints": 64
 				},
 				{
 					"login": "PlayerLogin2",
 					"name": "Player#2",
 					"rank": 2,
 					"roundpoints": 234,
-					"mappoints": 123
+					"mappoints": 123,
+					"matchpoints": 32
 				}
 			]
 		}"
 	]
 	```
 	
-### Shootmania.UIProperties
+### Shootmania.UI.Properties
 
-* Name: Shootmania.UIProperties
+* Name: Shootmania.UI.Properties
 * Type: CallbackArray
 * Description: Information about the default UI components of Maniaplanet (map info, chat, ladder recap, ...).
 * Data:
@@ -1181,10 +1272,6 @@ Callbacks
 			"responseid": "xyz", //< Facultative id passed by a script event
 		}",
 		"
-		<!--
-		  Each node is optional and can be omitted.
-		  If it's the case then the previous value will be kept.
-		-->
 		<ui_properties>
 		  <!-- Notifications displayed on the left of the screen -->
 		  <notices visible="true" />
@@ -1211,7 +1298,42 @@ Callbacks
 		  <!-- Ladder progression box displayed on the top of the screen at the end of the map -->
 		  <endmap_ladder_recap visible="true" />
 		</ui_properties>
-		"
+		",
+		"{
+			"notices": { //< Notifications displayed on the left of the screen
+				"visible": true
+			},
+			"map_info": { //< The map name and author displayed on the top right of the screen when viewing the scores table
+				"visible": true
+			},
+			"chat": { //< The server chat displayed on the bottom right of the screen
+				"visible": true,
+				"offset": { "x": 0.0, "y": 0.0 }, //< The offset values range from 0. to -3.2 for x and from 0. to 1.8 for y
+				"linecount": 5 //< The linecount property must be between 0 and 40
+			},
+			"countdown": { //< Countdown displayed on the top of the screen
+				"visible": true,
+				"pos": { "x": 0.0, "y": 85.0 }
+			},
+			"crosshair": { //< Crosshair displayed on the center of the screen
+				"visible": true
+			},
+			"gauges": { //< Gauges displayed on the bottom of the screen
+				"visible": true
+			},
+			"consumables": { //< Consumables displayed on the bottom of the screen
+				"visible": true
+			},
+			"go": { //< 3, 2, 1, Go! message displayed on the middle of the screen when spawning
+				"visible": true
+			},
+			"chat_avatar": { //< The avatar of the last player speaking in the chat displayed above the chat
+				"visible": true
+			},
+			"endmap_ladder_recap": { //< Ladder progression box displayed on the top of the screen at the end of the map
+				"visible": true
+			}
+		}"
 	]
 	```
 	
@@ -1238,38 +1360,6 @@ Callbacks
 	```
 	[
 		"{}"
-	]
-	```
-
-### Maniaplanet.WarmUp.Status
-
-* Name: Maniaplanet.WarmUp.Status
-* Type: CallbackArray
-* Description: The status of the warmup.
-* Data:
-	- Version >=2.0.0:
-	```
-	[
-		"{
-			"responseid": "xyz", //< Facultative id passed by a script event
-			"active": true //< true if a warmup is ongoing, false otherwise
-		}"
-	]
-	```
-
-### Shootmania.Combo.Pause
-
-* Name: Shootmania.Combo.Pause
-* Type: CallbackArray
-* Description: The status of the pause.
-* Data:
-	- Version >=2.0.0:
-	```
-	[
-		"{
-			"responseid": "xyz", //< Facultative id passed by a script event
-			"active": true //< true if a pause is active, false otherwise
-		}"
 	]
 	```
 
@@ -1616,7 +1706,7 @@ Callbacks
 					"matchpoints": 9,
 				},
 				{
-					"id": 0,
+					"id": 1,
 					"name": "red",
 					"roundpoints": 365,
 					"mappoints": 45,
@@ -1704,10 +1794,6 @@ Callbacks
 			"responseid": "xyz", //< Facultative id passed by a script event
 		}",
 		"
-		<!--
-			Each node in this file is optional and can be omitted.
-			If it's the case then the previous value will be kept.
-		-->
 		<ui_properties>
 			<!-- The map name and author displayed in the top right of the screen when viewing the scores table -->
 			<map_info visible="true" pos="75. -85.3 5." />
@@ -1748,7 +1834,74 @@ Callbacks
 			<!-- Player's ranking at the latest checkpoint -->
 			<checkpoint_ranking visible="true" pos="75., -85.3, 5." />
 		</ui_properties>
-		"
+		",
+		"{
+			"map_info": { //< The map name and author displayed in the top right of the screen when viewing the scores table
+				"visible": true,
+				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+			},
+			"opponents_info": { //< Only visible in solo modes, it hides the medal/ghost selection UI
+				"visible": true
+			},
+			"chat": { //< The server chat displayed on the bottom right of the screen
+				"visible": true,
+				"offset": { "x": 0.0, "y": 0.0 }, //< The offset values range from 0. to -3.2 for x and from 0. to 1.8 for y
+				"linecount": 7 //< The linecount property must be between 0 and 40
+			},
+			"checkpoint_list": { //< Time of the players at the current checkpoint displayed at the bottom of the screen
+				"visible": true,
+				"pos": { "x": 40.0, "y": 90.0, "z": 5.0 }
+			},
+			"round_scores": { //< Small scores table displayed at the end of race of the round based modes (Rounds, Cup, ...) on the right of the screen
+				"visible": true,
+				"pos": { "x": 104.0, "y": 14.0, "z": 5.0 }
+			},
+			"countdown": { //< Race time left displayed at the bottom right of the screen
+				"visible": true,
+				"pos": { "x": 154.0, "y": -57.0, "z": 5.0 }
+			},
+			"go": { //< 3, 2, 1, Go! message displayed on the middle of the screen when spawning
+				"visible": true
+			},
+			"chrono": { //< Current race chrono displayed at the bottom center of the screen
+				"visible": true,
+				"pos": { "x": 0.0, "y": -80.0, "z": 5.0 }
+			},
+			"speed_and_distance": { //< Speed and distance raced displayed in the bottom right of the screen
+				"visible": true,
+				"pos": { "x": 158.0, "y": -79.5, "z": 5.0 }
+			},
+			"personal_best_and_rank": { //< Previous and best times displayed at the bottom right of the screen
+				"visible": true,
+				"pos": { "x": 158.0, "y": -61.0, "z": 5.0 }
+			},
+			"position": { //< Current position in the map ranking displayed at the bottom right of the screen
+				"visible": true,
+				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+			},
+			"checkpoint_time": { //< Checkpoint time information displayed in the middle of the screen when crossing a checkpoint
+				"visible": true,
+				"pos": { "x": -8.0, "y": 31.8, "z": -10.0 }
+			},
+			"chat_avatar": { //< The avatar of the last player speaking in the chat displayed above the chat
+				"visible": true
+			},
+			"warmup": { //< Warm-up progression displayed on the right of the screen during warm-up
+				"visible": true,
+				"pos": { "x": 170.0, "y": 27.0, "z": 0.0 }
+			},
+			"endmap_ladder_recap": { //< Ladder progression box displayed on the top of the screen at the end of the map
+				"visible": true
+			},
+			"multilap_info": { //< Laps count displayed on the right of the screen on multilaps map
+				"visible": true,
+				"pos": { "x": 152.0, "y": 49.5, "z": 5.0 }
+			},
+			"checkpoint_ranking": { //< Player's ranking at the latest checkpoint
+				"visible": true,
+				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+			}
+		}"
 	]
 	```
 	
@@ -1986,6 +2139,59 @@ Methods
 	]
 	```
 
+### Maniaplanet.Mode.GetUseTeams
+
+* Name: Maniaplanet.Mode.GetUseTeams
+* Type: TriggerModeScriptEventArray
+* Description: Check if the game mode uses teams or not.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Maniaplanet.Mode.UseTeams" callback.
+	]
+	```
+
+### Maniaplanet.WarmUp.GetStatus
+
+* Name: Maniaplanet.WarmUp.GetStatus
+* Type: TriggerModeScriptEventArray
+* Description: Get the status of the warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Maniaplanet.WarmUp.Status" callback.
+	]
+	```
+
+### Maniaplanet.Pause.GetStatus
+
+* Name: Maniaplanet.Pause.GetStatus
+* Type: TriggerModeScriptEventArray
+* Description: Get the status of the pause.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Maniaplanet.Pause.Status" callback.
+	]
+	```
+
+### Maniaplanet.Pause.SetActive
+
+* Name: Maniaplanet.Pause.SetActive
+* Type: TriggerModeScriptEventArray
+* Description: Enable or disable the pause if it is available.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"true", //< true to enable the pause, false to disable it.
+		"responseid" //< Facultative id that will be passed to the "Maniaplanet.Pause.Status" callback.
+	]
+	```
+
 ### Shootmania.GetScores
 
 * Name: Shootmania.GetScores
@@ -1999,22 +2205,22 @@ Methods
 	]
 	```
 	
-### Shootmania.GetUIProperties
+### Shootmania.UI.GetProperties
 
-* Name: Shootmania.GetUIProperties
+* Name: Shootmania.UI.GetProperties
 * Type: TriggerModeScriptEventArray
-* Description: Request the current ui properties. This method will trigger the "Shootmania.UIProperties" callback.
+* Description: Request the current ui properties. This method will trigger the "Shootmania.UI.Properties" callback.
 * Data:
 	- Version >=2.0.0:
 	```
 	[
-		"responseid" //< Facultative id that will be passed to the "Shootmania.UIProperties" callback.
+		"responseid" //< Facultative id that will be passed to the "Shootmania.UI.Properties" callback.
 	]
 	```
 	
-### Shootmania.SetUIProperties
+### Shootmania.UI.SetProperties
 
-* Name: Shootmania.SetUIProperties
+* Name: Shootmania.UI.SetProperties
 * Type: TriggerModeScriptEventArray
 * Description: Update the ui properties.
 * Data:
@@ -2080,43 +2286,17 @@ Methods
 	[]
 	```
 
-### Maniaplanet.WarmUp.GetStatus
+### Maniaplanet.WarmUp.BlockEndWarmUp
 
-* Name: Maniaplanet.WarmUp.GetStatus
+* Name: Maniaplanet.WarmUp.BlockEndWarmUp
 * Type: TriggerModeScriptEventArray
-* Description: Get the status of the warmup.
+* Description: Disable the countdown when all teams' slots are filled and force all players to be ready before ending the warmup.
 * Data:
 	- Version >=2.0.0:
 	```
 	[
-		"responseid" //< Facultative id that will be passed to the "Maniaplanet.WarmUp.Status" callback.
-	]
-	```
-
-### Shootmania.Combo.GetPause
-
-* Name: Shootmania.Combo.GetPause
-* Type: TriggerModeScriptEventArray
-* Description: Get the status of the pause.
-* Data:
-	- Version >=2.0.0:
-	```
-	[
-		"responseid" //< Facultative id that will be passed to the "Shootmania.Combo.Pause" callback.
-	]
-	```
-
-### Shootmania.Combo.SetPause
-
-* Name: Shootmania.Combo.SetPause
-* Type: TriggerModeScriptEventArray
-* Description: Set the status of the pause.
-* Data:
-	- Version >=2.0.0:
-	```
-	[
-		"true", //< true to enable the pause, false to disable it
-		"responseid" //< Facultative id that will be passed to the "Shootmania.Combo.Pause" callback.
+		"true", //< true to block the warmup countdown, false to unblock.
+		"5000" //< Timer before the end of the warmup when all players are ready. Use a negative value to prevent the warmup from ending even if all players are ready.
 	]
 	```
 
