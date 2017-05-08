@@ -63,7 +63,9 @@ Callbacks
 	[
 		"{
 			"responseid": "xyz", //< Facultative id passed by a script event
-			"callback": "CallbackName" //< The name of the described callback
+			"callback": "CallbackName", //< The name of the described callback
+			"available": true, //< Is the callback available in this game mode?
+			"disabled": false //< Is the callback blocked?
 		}", 
 		"Description of the callback" //< The description of the callback
 	]
@@ -96,7 +98,8 @@ Callbacks
 	[
 		"{
 			"responseid": "xyz", //< Facultative id passed by a script event
-			"method": "MethodName" //< The name of the described method
+			"method": "MethodName", //< The name of the described method
+			"available": true //< Is the method available in this game mode?
 		}", 
 		"Description of the method" //< The description of the method
 	]
@@ -162,6 +165,10 @@ Callbacks
 	[
 		"{
 			"restarted": false, //< true if the script was restarted
+			"mode": {
+				"updated": true, //< true if the mode was changed
+				"name": "TimeAttack" //< The name of the mode
+			},
 			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
@@ -178,6 +185,10 @@ Callbacks
 	[
 		"{
 			"restarted": false, //< true if the script was restarted
+			"mode": {
+				"updated": true, //< true if the mode was changed
+				"name": "TimeAttack" //< The name of the mode
+			},
 			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
@@ -581,6 +592,7 @@ Callbacks
 	```
 	[
 		"{
+			"restarted": false, //< true if the map was restarted, false otherwise
 			"time": 123450 //< Server time when the callback was sent
 		}"
 	]
@@ -596,6 +608,7 @@ Callbacks
 	```
 	[
 		"{
+			"restarted": false, //< true if the map was restarted, false otherwise
 			"time": 123450, //< Server time when the callback was sent
 			"map": {
 				"uid": "4dNDBnxvcwDaXmQz4Qf5khJUSOd", //< Unique id of the map
@@ -685,6 +698,36 @@ Callbacks
 * Name: Maniaplanet.Podium_End
 * Type: CallbackArray
 * Description: Callback sent when the podium sequence ends.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
+	]
+	```
+
+### Maniaplanet.ChannelProgression_Start
+
+* Name: Maniaplanet.ChannelProgression_Start
+* Type: CallbackArray
+* Description: Callback sent when the channel progression sequence starts.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"{
+			"time": 123450 //< Server time when the callback was sent
+		}"
+	]
+	```
+
+### Maniaplanet.ChannelProgression_End
+
+* Name: Maniaplanet.ChannelProgression_End
+* Type: CallbackArray
+* Description: Callback sent when the channel progression sequence ends.
 * Data:
 	- Version >=2.0.0:
 	```
@@ -1297,6 +1340,8 @@ Callbacks
 		  <chat_avatar visible="true" />
 		  <!-- Ladder progression box displayed on the top of the screen at the end of the map -->
 		  <endmap_ladder_recap visible="true" />
+		  <!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" />
 		</ui_properties>
 		",
 		"{
@@ -1332,6 +1377,9 @@ Callbacks
 			},
 			"endmap_ladder_recap": { //< Ladder progression box displayed on the top of the screen at the end of the map
 				"visible": true
+			},
+			"scorestable": { //< Scores table displayed in the middle of the screen
+				"alt_visible": true
 			}
 		}"
 	]
@@ -1833,6 +1881,8 @@ Callbacks
 			<multilap_info visible="true" pos="152. 49.5 5." />
 			<!-- Player's ranking at the latest checkpoint -->
 			<checkpoint_ranking visible="true" pos="75., -85.3, 5." />
+			<!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" />
 		</ui_properties>
 		",
 		"{
@@ -1900,6 +1950,9 @@ Callbacks
 			"checkpoint_ranking": { //< Player's ranking at the latest checkpoint
 				"visible": true,
 				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+			},
+			"scorestable": { //< Scores table displayed in the middle of the screen
+				"alt_visible": true
 			}
 		}"
 	]
@@ -1963,6 +2016,23 @@ Callbacks
 	]
 	```
 	
+### Trackmania.WarmUp.Status
+
+* Name: Trackmania.WarmUp.Status
+* Type: CallbackArray
+* Description: The status of Trackmania's the warmup.
+* Data:
+  - Version >=2.0.0:
+  ```
+  [
+    "{
+      "responseid": "xyz", //< Facultative id passed by a script event
+      "available": true, //< true if a warmup is available in the game mode, false otherwise
+      "active": true //< true if a warmup is ongoing, false otherwise
+    }"
+  ]
+  ```
+
 Methods
 -------
 
@@ -2152,6 +2222,20 @@ Methods
 	]
 	```
 
+### Maniaplanet.UI.SetAltScoresTableVisibility
+
+* Name: Maniaplanet.UI.SetAltScoresTableVisibility
+* Type: TriggerModeScriptEventArray
+* Description: Enable or disable the scores table display with the alt key.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"PlayerLogin", //< The login of the player to update
+		"false" //< false to disable, true to enable
+	]
+	```
+
 ### Maniaplanet.WarmUp.GetStatus
 
 * Name: Maniaplanet.WarmUp.GetStatus
@@ -2257,6 +2341,8 @@ Methods
 		  <chat_avatar visible="true" />
 		  <!-- Ladder progression box displayed on the top of the screen at the end of the map -->
 		  <endmap_ladder_recap visible="true" />
+		  <!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" />
 		</ui_properties>
 		"
 	]
@@ -2275,9 +2361,9 @@ Methods
 	]
 	```
 
-### Maniaplanet.WarmUp.Stop
+### Maniaplanet.WarmUp.ForceStop
 
-* Name: Maniaplanet.WarmUp.Stop
+* Name: Maniaplanet.WarmUp.ForceStop
 * Type: TriggerModeScriptEventArray
 * Description: Stop any ongoing warmup.
 * Data:
@@ -2313,6 +2399,17 @@ Methods
 		"50.5", //< Y position
 		"0." //< Z position
 	]
+	```
+
+### Maniaplanet.WarmUp.Stop
+
+* Name: Maniaplanet.WarmUp.Stop
+* Type: TriggerModeScriptEventArray
+* Description: Stop any ongoing warmup.
+* Data:
+	- Version >=2.0.0:
+	```
+	[]
 	```
 
 ### Shootmania.Siege.SetProgressionUIPosition
@@ -2435,14 +2532,16 @@ Methods
 			<multilap_info visible="true" pos="152. 49.5 5." />
 			<!-- Player's ranking at the latest checkpoint -->
 			<checkpoint_ranking visible="true" pos="75., -85.3, 5." />
+			<!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" />
 		</ui_properties>
 		"
 	]
 	```
 	
-### Trackmania.WarmUp.Stop
+### Trackmania.WarmUp.ForceStop
 
-* Name: Trackmania.WarmUp.Stop
+* Name: Trackmania.WarmUp.ForceStop
 * Type: TriggerModeScriptEventArray
 * Description: Stop the whole warm up sequence.
 * Data:
@@ -2451,9 +2550,9 @@ Methods
 	[]
 	```
 	
-### Trackmania.WarmUp.StopRound
+### Trackmania.WarmUp.ForceStopRound
 
-* Name: Trackmania.WarmUp.StopRound
+* Name: Trackmania.WarmUp.ForceStopRound
 * Type: TriggerModeScriptEventArray
 * Description: Stop the current warm up round.
 * Data:
@@ -2462,6 +2561,28 @@ Methods
 	[]
 	```
 	
+### Trackmania.WarmUp.GetStatus
+
+* Name: Trackmania.WarmUp.GetStatus
+* Type: TriggerModeScriptEventArray
+* Description: Get the status of the trackmania's warmup.
+* Data:
+  - Version >=2.0.0:
+  ```
+  [
+    "responseid" //< Facultative id that will be passed to the "Trackmania.WarmUp.Status" callback.
+  ]
+  ```
+
+### Trackmania.Chase.ForceStopRound
+
+* Name: Trackmania.Chase.ForceStopRound
+* Type: TriggerModeScriptEventArray
+* Description: Force the end of the current round.
+* Data:
+	- Version >=2.0.0:
+	```[]```
+
 ### Trackmania.ForceEndRound
 
 * Name: Trackmania.ForceEndRound
