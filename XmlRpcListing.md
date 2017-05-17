@@ -1844,7 +1844,11 @@ Callbacks
 		"
 		<ui_properties>
 			<!-- The map name and author displayed in the top right of the screen when viewing the scores table -->
-			<map_info visible="true" pos="75. -85.3 5." />
+			<map_info visible="true" pos="-160. 80. 150." />
+			<!-- Information about live envent displayed in the top right of the screen -->
+			<live_info visible="true" pos="-159. 84. 5." />
+			<!-- Information about the spectated player displayed in the bottom of the screen -->
+			<spectator_info visible="true" pos="0. -68. 5." />
 			<!-- Only visible in solo modes, it hides the medal/ghost selection UI -->
 			<opponents_info visible="true" />
 			<!--
@@ -1854,33 +1858,33 @@ Callbacks
 			-->
 			<chat visible="true" offset="0. 0." linecount="7" />
 			<!-- Time of the players at the current checkpoint displayed at the bottom of the screen -->
-			<checkpoint_list visible="true" pos="40. -90. 5." />
+			<checkpoint_list visible="true" pos="48. -52. 5." />
 			<!-- Small scores table displayed at the end of race of the round based modes (Rounds, Cup, ...) on the right of the screen -->
-			<round_scores visible="true" pos="104. 14. 5." />
+			<round_scores visible="true" pos="-158.5 40. 150." />
 			<!-- Race time left displayed at the bottom right of the screen -->
-			<countdown visible="true" pos="154. -57. 5." />
+			<countdown visible="true" pos="153. -7. 5." />
 			<!-- 3, 2, 1, Go! message displayed on the middle of the screen when spawning -->
 			<go visible="true" />
 			<!-- Current race chrono displayed at the bottom center of the screen -->
-			<chrono visible="true" pos="0. -80. 5." />
+			<chrono visible="true" pos="0. -80. -5." />
 			<!-- Speed and distance raced displayed in the bottom right of the screen -->
-			<speed_and_distance visible="true" pos="158. -79.5 5." />
+			<speed_and_distance visible="true" pos="137. -69. 5." />
 			<!-- Previous and best times displayed at the bottom right of the screen -->
-			<personal_best_and_rank visible="true" pos="158. -61. 5." />
+			<personal_best_and_rank visible="true" pos="157. -24. 5." />
 			<!-- Current position in the map ranking displayed at the bottom right of the screen -->
-			<position visible="true" pos="75. -85.3 5." />
+			<position visible="true" pos="150.5 -28. 5." />
 			<!-- Checkpoint time information displayed in the middle of the screen when crossing a checkpoint -->
-			<checkpoint_time visible="true" pos="-8. 31.8 -10." />
+			<checkpoint_time visible="true" pos="0. 3. -10." />
 			<!-- The avatar of the last player speaking in the chat displayed above the chat -->
 			<chat_avatar visible="true" />
 			<!-- Warm-up progression displayed on the right of the screen during warm-up -->
-			<warmup visible="true" pos="170. 27. 0." />
+			<warmup visible="true" pos="153. 13. 0." />
 			<!-- Ladder progression box displayed on the top of the screen at the end of the map -->
 			<endmap_ladder_recap visible="true" />
 			<!-- Laps count displayed on the right of the screen on multilaps map -->
-			<multilap_info visible="true" pos="152. 49.5 5." />
+			<multilap_info visible="true" pos="140. 84. 5." />
 			<!-- Player's ranking at the latest checkpoint -->
-			<checkpoint_ranking visible="true" pos="75., -85.3, 5." />
+			<checkpoint_ranking visible="false" pos="0. 84. 5." />
 			<!-- Scores table displayed in the middle of the screen -->
 			<scorestable alt_visible="true" />
 		</ui_properties>
@@ -1888,7 +1892,15 @@ Callbacks
 		"{
 			"map_info": { //< The map name and author displayed in the top right of the screen when viewing the scores table
 				"visible": true,
-				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+				"pos": { "x": -160.0, "y": 80.0, "z": 150.0 }
+			},
+			"live_info": { //< Information about live envent displayed in the top right of the screen
+				"visible": true,
+				"pos": { "x": -159.0, "y": 84.0, "z": 5.0 }
+			},
+			"spectator_info": { //< Information about the spectated player displayed in the bottom of the screen
+				"visible": true,
+				"pos": { "x": 0.0, "y": -68.0, "z": 5.0 }
 			},
 			"opponents_info": { //< Only visible in solo modes, it hides the medal/ghost selection UI
 				"visible": true
@@ -1900,56 +1912,56 @@ Callbacks
 			},
 			"checkpoint_list": { //< Time of the players at the current checkpoint displayed at the bottom of the screen
 				"visible": true,
-				"pos": { "x": 40.0, "y": 90.0, "z": 5.0 }
+				"pos": { "x": 48.0, "y": -52.0, "z": 5.0 }
 			},
 			"round_scores": { //< Small scores table displayed at the end of race of the round based modes (Rounds, Cup, ...) on the right of the screen
 				"visible": true,
-				"pos": { "x": 104.0, "y": 14.0, "z": 5.0 }
+				"pos": { "x": -158.5, "y": 40.0, "z": 150.0 }
 			},
 			"countdown": { //< Race time left displayed at the bottom right of the screen
 				"visible": true,
-				"pos": { "x": 154.0, "y": -57.0, "z": 5.0 }
+				"pos": { "x": 153.0, "y": -7.0, "z": 5.0 }
 			},
 			"go": { //< 3, 2, 1, Go! message displayed on the middle of the screen when spawning
 				"visible": true
 			},
 			"chrono": { //< Current race chrono displayed at the bottom center of the screen
 				"visible": true,
-				"pos": { "x": 0.0, "y": -80.0, "z": 5.0 }
+				"pos": { "x": 0.0, "y": -80.0, "z": -5.0 }
 			},
 			"speed_and_distance": { //< Speed and distance raced displayed in the bottom right of the screen
 				"visible": true,
-				"pos": { "x": 158.0, "y": -79.5, "z": 5.0 }
+				"pos": { "x": 137.0, "y": -69.0, "z": 5.0 }
 			},
 			"personal_best_and_rank": { //< Previous and best times displayed at the bottom right of the screen
 				"visible": true,
-				"pos": { "x": 158.0, "y": -61.0, "z": 5.0 }
+				"pos": { "x": 157.0, "y": -24.0, "z": 5.0 }
 			},
 			"position": { //< Current position in the map ranking displayed at the bottom right of the screen
 				"visible": true,
-				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+				"pos": { "x": 150.5, "y": -28.0, "z": 5.0 }
 			},
 			"checkpoint_time": { //< Checkpoint time information displayed in the middle of the screen when crossing a checkpoint
 				"visible": true,
-				"pos": { "x": -8.0, "y": 31.8, "z": -10.0 }
+				"pos": { "x": 0.0, "y": 3.0, "z": -10.0 }
 			},
 			"chat_avatar": { //< The avatar of the last player speaking in the chat displayed above the chat
 				"visible": true
 			},
 			"warmup": { //< Warm-up progression displayed on the right of the screen during warm-up
 				"visible": true,
-				"pos": { "x": 170.0, "y": 27.0, "z": 0.0 }
+				"pos": { "x": 153.0, "y": 13.0, "z": 0.0 }
 			},
 			"endmap_ladder_recap": { //< Ladder progression box displayed on the top of the screen at the end of the map
 				"visible": true
 			},
 			"multilap_info": { //< Laps count displayed on the right of the screen on multilaps map
 				"visible": true,
-				"pos": { "x": 152.0, "y": 49.5, "z": 5.0 }
+				"pos": { "x": 140.0, "y": 84.0, "z": 5.0 }
 			},
 			"checkpoint_ranking": { //< Player's ranking at the latest checkpoint
 				"visible": true,
-				"pos": { "x": 75.0, "y": -85.3, "z": 5.0 }
+				"pos": { "x": 0.0, "y": 84.0, "z": 5.0 }
 			},
 			"scorestable": { //< Scores table displayed in the middle of the screen
 				"alt_visible": true
@@ -2466,6 +2478,38 @@ Methods
 	]
 	```
 	
+### Trackmania.SetPlayerPoints
+
+* Name: Trackmania.SetPlayerPoints
+* Type: TriggerModeScriptEventArray
+* Description: Set the points of the player. It overrides its current points. Different game modes will use different types of points.
+* Data:
+	- Version >=2.1.0:
+	```
+	[
+		"PlayerLogin", //< Login of the player to update
+		"10", //< The round points, use an empty string to not update.
+		"96", //< The map points, use an empty string to not update.
+		"2" //< The match points, use an empty string to not update.
+	]
+	```
+	
+### Trackmania.SetTeamPoints
+
+* Name: Trackmania.SetTeamPoints
+* Type: TriggerModeScriptEventArray
+* Description: Set the points of a team. It overrides their current points. Different game modes will use different types of points.
+* Data:
+	- Version >=2.1.0:
+	```
+	[
+		"1", //< Id of the team t. Can be 1 or 2.
+		"5", //< The round points, use an empty string to not update.
+		"70", //< The map points, use an empty string to not update.
+		"2" //< The match points, use an empty string to not update.
+	]
+	```
+	
 ### Trackmania.UI.GetProperties
 
 * Name: Trackmania.UI.GetProperties
@@ -2495,7 +2539,11 @@ Methods
 		-->
 		<ui_properties>
 			<!-- The map name and author displayed in the top right of the screen when viewing the scores table -->
-			<map_info visible="true" pos="75. -85.3 5." />
+			<map_info visible="true" pos="-160. 80. 150." />
+			<!-- Information about live envent displayed in the top right of the screen -->
+			<live_info visible="true" pos="-159. 84. 5." />
+			<!-- Information about the spectated player displayed in the bottom of the screen -->
+			<spectator_info visible="true" pos="0. -68. 5." />
 			<!-- Only visible in solo modes, it hides the medal/ghost selection UI -->
 			<opponents_info visible="true" />
 			<!--
@@ -2505,33 +2553,33 @@ Methods
 			-->
 			<chat visible="true" offset="0. 0." linecount="7" />
 			<!-- Time of the players at the current checkpoint displayed at the bottom of the screen -->
-			<checkpoint_list visible="true" pos="40. -90. 5." />
+			<checkpoint_list visible="true" pos="48. -52. 5." />
 			<!-- Small scores table displayed at the end of race of the round based modes (Rounds, Cup, ...) on the right of the screen -->
-			<round_scores visible="true" pos="104. 14. 5." />
+			<round_scores visible="true" pos="-158.5 40. 150." />
 			<!-- Race time left displayed at the bottom right of the screen -->
-			<countdown visible="true" pos="154. -57. 5." />
+			<countdown visible="true" pos="153. -7. 5." />
 			<!-- 3, 2, 1, Go! message displayed on the middle of the screen when spawning -->
 			<go visible="true" />
 			<!-- Current race chrono displayed at the bottom center of the screen -->
-			<chrono visible="true" pos="0. -80. 5." />
+			<chrono visible="true" pos="0. -80. -5." />
 			<!-- Speed and distance raced displayed in the bottom right of the screen -->
-			<speed_and_distance visible="true" pos="158. -79.5 5." />
+			<speed_and_distance visible="true" pos="137. -69. 5." />
 			<!-- Previous and best times displayed at the bottom right of the screen -->
-			<personal_best_and_rank visible="true" pos="158. -61. 5." />
+			<personal_best_and_rank visible="true" pos="157. -24. 5." />
 			<!-- Current position in the map ranking displayed at the bottom right of the screen -->
-			<position visible="true" pos="75. -85.3 5." />
+			<position visible="true" pos="150.5 -28. 5." />
 			<!-- Checkpoint time information displayed in the middle of the screen when crossing a checkpoint -->
-			<checkpoint_time visible="true" pos="-8. 31.8 -10." />
+			<checkpoint_time visible="true" pos="0. 3. -10." />
 			<!-- The avatar of the last player speaking in the chat displayed above the chat -->
 			<chat_avatar visible="true" />
 			<!-- Warm-up progression displayed on the right of the screen during warm-up -->
-			<warmup visible="true" pos="170. 27. 0." />
+			<warmup visible="true" pos="153. 13. 0." />
 			<!-- Ladder progression box displayed on the top of the screen at the end of the map -->
 			<endmap_ladder_recap visible="true" />
 			<!-- Laps count displayed on the right of the screen on multilaps map -->
-			<multilap_info visible="true" pos="152. 49.5 5." />
+			<multilap_info visible="true" pos="140. 84. 5." />
 			<!-- Player's ranking at the latest checkpoint -->
-			<checkpoint_ranking visible="true" pos="75., -85.3, 5." />
+			<checkpoint_ranking visible="false" pos="0. 84. 5." />
 			<!-- Scores table displayed in the middle of the screen -->
 			<scorestable alt_visible="true" />
 		</ui_properties>
