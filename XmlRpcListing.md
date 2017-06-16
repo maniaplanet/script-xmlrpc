@@ -1301,6 +1301,17 @@ Callbacks
 		}"
 	]
 	```
+	- Version >=2.1.1: 
+	The section parameter can take one new value: "PreEndRound".
+	```
+	[
+		"{
+			...
+			"section": "EndRound", //< Current progress of the match. Can be "" | "PreEndRound" | "EndRound" | "EndMap" | "EndMatch"
+			...
+		}"
+	]
+	```
 	
 ### Shootmania.UI.Properties
 
@@ -1385,6 +1396,40 @@ Callbacks
 	]
 	```
 	
+### Shootmania.AFK.IsAFK
+
+* Name: Shootmania.AFK.IsAFK
+* Type: CallbackArray
+* Description: This callback is sent when the AFK library detects an AFK player, it will be sent at regular interval until the players are forced into spectator mode.
+* Data:
+	- Version >=2.2.0: 
+	```
+	[
+		"{
+			"logins": ["PlayerA", "PlayerC", "PlayerN"] //< Logins of the AFK players
+		}"
+	]
+	```
+
+### Shootmania.AFK.Properties
+
+* Name: Shootmania.AFK.Properties
+* Type: CallbackArray
+* Description: AFK management library properties. Can be triggered with the "Shootmania.AFK.GetProperties" method.
+* Data:
+	- Version >=2.2.0: 
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"idletimelimit": 90000, //< Time after which a player is considered to be AFK (ms)
+			"spawntimelimit": 15000, //< Time after spawn before which a player can't be considered to be AFK (ms)
+			"checkinterval": 10000, //< Time between each AFK check (ms)
+			"forcespec": true //< Let the library force the AFK player into spectator mode
+		}"
+	]
+	```
+
 ### Maniaplanet.WarmUp.Start
 
 * Name: Maniaplanet.WarmUp.Start
@@ -1793,6 +1838,17 @@ Callbacks
 					"stuntsscore": 9874
 				}
 			]
+		}"
+	]
+	```
+	- Version >=2.1.1: 
+	The section parameter can take one new value: "PreEndRound".
+	```
+	[
+		"{
+			...
+			"section": "EndRound", //< Current progress of the match. Can be "" | "PreEndRound" | "EndRound" | "EndMap" | "EndMatch"
+			...
 		}"
 	]
 	```
@@ -2360,6 +2416,35 @@ Methods
 	]
 	```
 	
+### Shootmania.AFK.GetProperties
+
+* Name: Shootmania.AFK.GetProperties
+* Type: TriggerModeScriptEventArray
+* Description: Request the current properties of the AFK libraries.
+* Data:
+	- Version >=2.2.0: 
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Shootmania.AFK.Properties" callback.
+	]
+	```
+
+### Shootmania.AFK.SetProperties
+
+* Name: Shootmania.AFK.SetProperties
+* Type: TriggerModeScriptEventArray
+* Description: Set the properties of the AFK library.
+* Data:
+	- Version >=2.2.0:
+	```
+	[
+		"90000", //< IdleTimeLimit: Time after which a player is considered to be AFK (ms)
+		"15000", //< SpawnTimeLimit: Time after spawn before which a player can't be considered to be AFK (ms)
+		"10000", //< CheckInterval: Time between each AFK check (ms)
+		"True" //< ForceSpec: Let the library force the AFK player into spectator mode
+	]
+	```
+
 ### Maniaplanet.WarmUp.Extend
 
 * Name: Maniaplanet.WarmUp.Extend
