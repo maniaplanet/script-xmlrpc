@@ -1,9 +1,7 @@
-XmlRpc for game modes scripts
-=============================
+xml-rpc api for the game modes scripts
+======================================
 
-Changelog of the game modes scripts xmlrpc callbacks and methods.
-
-Changelog
-=========
-
-Check [here](https://github.com/maniaplanet/script-xmlrpc/releases)
+- [Quick intro](https://v4.live.maniaplanet.com/documentation/dedicated-server/references/xml-rpc-scripts)
+- [Callbacks reference](https://github.com/maniaplanet/script-xmlrpc/blob/master/XmlRpcListing.md#callbacks)
+- [Methods reference](https://github.com/maniaplanet/script-xmlrpc/blob/master/XmlRpcListing.md#methods)
+- [Changelog](https://github.com/maniaplanet/script-xmlrpc/releases)
