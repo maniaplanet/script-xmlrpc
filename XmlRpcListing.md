@@ -1323,7 +1323,7 @@ Callbacks
 	```
 	[
 		"{
-			"responseid": "xyz", //< Facultative id passed by a script event
+			"responseid": "xyz" //< Facultative id passed by a script event
 		}",
 		"
 		<ui_properties>
@@ -1392,6 +1392,24 @@ Callbacks
 			"scorestable": { //< Scores table displayed in the middle of the screen
 				"alt_visible": true
 			}
+		}"
+	]
+	```
+	
+### Shootmania.UI.Property
+
+* Name: Shootmania.UI.Property
+* Type: CallbackArray
+* Description: Value of one property of a UI module.
+* Data:
+	- Version >=2.3.0: 
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"module": "map_info", //< The module
+			"property": "visible", //< The name of the property
+			"value": true //< The value of the property. Its type can change depending on the property.
 		}"
 	]
 	```
@@ -1895,7 +1913,7 @@ Callbacks
 	```
 	[
 		"{
-			"responseid": "xyz", //< Facultative id passed by a script event
+			"responseid": "xyz" //< Facultative id passed by a script event
 		}",
 		"
 		<ui_properties>
@@ -1908,7 +1926,7 @@ Callbacks
 			<!-- Only visible in solo modes, it hides the medal/ghost selection UI -->
 			<opponents_info visible="true" />
 			<!--
-				The server chat displayed on the bottom right of the screen
+				The server chat displayed on the bottom left of the screen
 				The offset values range from 0. to -3.2 for x and from 0. to 1.8 for y
 				The linecount property must be between 0 and 40
 			-->
@@ -1961,7 +1979,7 @@ Callbacks
 			"opponents_info": { //< Only visible in solo modes, it hides the medal/ghost selection UI
 				"visible": true
 			},
-			"chat": { //< The server chat displayed on the bottom right of the screen
+			"chat": { //< The server chat displayed on the bottom left of the screen
 				"visible": true,
 				"offset": { "x": 0.0, "y": 0.0 }, //< The offset values range from 0. to -3.2 for x and from 0. to 1.8 for y
 				"linecount": 7 //< The linecount property must be between 0 and 40
@@ -2022,6 +2040,47 @@ Callbacks
 			"scorestable": { //< Scores table displayed in the middle of the screen
 				"alt_visible": true
 			}
+		}"
+	]
+	```
+	- Version >=2.3.0: 
+	A new module "viewers_count" is available.
+	```
+	[
+		"{
+			"responseid": "xyz" //< Facultative id passed by a script event
+		}",
+		"
+		<ui_properties>
+			...
+			<!-- Number of players spectating us displayed at the bottom right of the screen -->
+			<viewers_count visible="true" pos="157. -40. 5." />
+		</ui_properties>
+		",
+		"{
+			...
+			"viewers_count": { //< Number of players spectating us displayed at the bottom right of the screen
+				"visible": true,
+				"pos": { "x": 157.0, "y": -40.0, "z": 5.0 }
+			}
+		}"
+	]
+	```
+	
+### Trackmania.UI.Property
+
+* Name: Trackmania.UI.Property
+* Type: CallbackArray
+* Description: Value of one property of a UI module.
+* Data:
+	- Version >=2.3.0: 
+	```
+	[
+		"{
+			"responseid": "xyz", //< Facultative id passed by a script event
+			"module": "map_info", //< The module
+			"property": "visible", //< The name of the property
+			"value": true //< The value of the property. Its type can change depending on the property.
 		}"
 	]
 	```
@@ -2357,11 +2416,56 @@ Methods
 	]
 	```
 	
+### Shootmania.SetPlayerPoints
+
+* Name: Shootmania.SetPlayerPoints
+* Type: TriggerModeScriptEventArray
+* Description: Set the points of the player. It overrides its current points. Different game modes will use different types of points.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"PlayerLogin", //< Login of the player to update
+		"10", //< The round points, use an empty string to not update.
+		"96", //< The map points, use an empty string to not update.
+		"2" //< The match points, use an empty string to not update.
+	]
+	```
+	
+### Shootmania.SetTeamPoints
+
+* Name: Shootmania.SetTeamPoints
+* Type: TriggerModeScriptEventArray
+* Description: Set the points of a team. It overrides their current points. Different game modes will use different types of points.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"0", //< Id of the team. Can be 0 or 1.
+		"5", //< The round points, use an empty string to not update.
+		"70", //< The map points, use an empty string to not update.
+		"2" //< The match points, use an empty string to not update.
+	]
+	```
+	
 ### Shootmania.UI.GetProperties
 
 * Name: Shootmania.UI.GetProperties
 * Type: TriggerModeScriptEventArray
 * Description: Request the current ui properties. This method will trigger the "Shootmania.UI.Properties" callback.
+* Data:
+	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Shootmania.UI.Properties" callback.
+	]
+	```
+	
+### Shootmania.UI.GetDefaultProperties
+
+* Name: Shootmania.UI.GetDefaultProperties
+* Type: TriggerModeScriptEventArray
+* Description: Request the default ui properties. This method will trigger the "Shootmania.UI.Properties" callback.
 * Data:
 	- Version >=2.0.0:
 	```
@@ -2413,6 +2517,76 @@ Methods
 			<scorestable alt_visible="true" />
 		</ui_properties>
 		"
+	]
+	```
+	
+### Shootmania.UI.ResetProperties
+
+* Name: Shootmania.UI.ResetProperties
+* Type: TriggerModeScriptEventArray
+* Description: Reset the ui properties to their default value.
+* Data:
+	- Version >=2.3.0:
+	```
+	[]
+	```
+	
+### Shootmania.UI.GetProperty
+
+* Name: Shootmania.UI.GetProperty
+* Type: TriggerModeScriptEventArray
+* Description: Request the value of a module property. This method will trigger the "Shootmania.UI.Property" callback.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible", //< The name of the property
+		"responseid" //< Facultative id that will be passed to the "Shootmania.UI.Property" callback.
+	]
+	```
+	
+### Shootmania.UI.GetDefaultProperty
+
+* Name: Shootmania.UI.GetDefaultProperty
+* Type: TriggerModeScriptEventArray
+* Description: Request the default value of a module property. This method will trigger the "Shootmania.UI.Property" callback.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible", //< The name of the property
+		"responseid" //< Facultative id that will be passed to the "Shootmania.UI.Property" callback.
+	]
+	```
+	
+### Shootmania.UI.SetProperty
+
+* Name: Shootmania.UI.SetProperty
+* Type: TriggerModeScriptEventArray
+* Description: Set the value of a module property.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible", //< The name of the property
+		"true" //< The value of the property
+	]
+	```
+	
+### Shootmania.UI.ResetProperty
+
+* Name: Shootmania.UI.ResetProperty
+* Type: TriggerModeScriptEventArray
+* Description: Reset a module property to its default value.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible" //< The name of the property
 	]
 	```
 	
@@ -2588,7 +2762,17 @@ Methods
 	- Version >=2.1.0:
 	```
 	[
-		"1", //< Id of the team t. Can be 1 or 2.
+		"1", //< Id of the team. Can be 1 or 2.
+		"5", //< The round points, use an empty string to not update.
+		"70", //< The map points, use an empty string to not update.
+		"2" //< The match points, use an empty string to not update.
+	]
+	```
+	- Version >=2.3.0:
+	The team id are now 0 (Blue) and 1 (Red) instead of 1 (Blue) and 2 (Red).
+	```
+	[
+		"0", //< Id of the team. Can be 0 or 1.
 		"5", //< The round points, use an empty string to not update.
 		"70", //< The map points, use an empty string to not update.
 		"2" //< The match points, use an empty string to not update.
@@ -2602,6 +2786,19 @@ Methods
 * Description: Request the current ui properties. This method will trigger the "Trackmania.UI.Properties" callback.
 * Data:
 	- Version >=2.0.0:
+	```
+	[
+		"responseid" //< Facultative id that will be passed to the "Trackmania.UI.Properties" callback.
+	]
+	```
+	
+### Trackmania.UI.GetDefaultProperties
+
+* Name: Trackmania.UI.GetDefaultProperties
+* Type: TriggerModeScriptEventArray
+* Description: Request the default ui properties. This method will trigger the "Trackmania.UI.Properties" callback.
+* Data:
+	- Version >=2.3.0:
 	```
 	[
 		"responseid" //< Facultative id that will be passed to the "Trackmania.UI.Properties" callback.
@@ -2632,7 +2829,7 @@ Methods
 			<!-- Only visible in solo modes, it hides the medal/ghost selection UI -->
 			<opponents_info visible="true" />
 			<!--
-				The server chat displayed on the bottom right of the screen
+				The server chat displayed on the bottom left of the screen
 				The offset values range from 0. to -3.2 for x and from 0. to 1.8 for y
 				The linecount property must be between 0 and 40
 			-->
@@ -2669,6 +2866,93 @@ Methods
 			<scorestable alt_visible="true" />
 		</ui_properties>
 		"
+	]
+	```
+	- Version >=2.3.0:
+	A new module "viewers_count" is available.
+	```
+	[
+		"
+		<!--
+		  Each node is optional and can be omitted.
+		  If it's the case then the previous value will be kept.
+		-->
+		<ui_properties>
+			...
+			<!-- Number of players spectating us displayed at the bottom right of the screen -->
+			<viewers_count visible="true" pos="157. -40. 5." />
+		</ui_properties>
+		"
+	]
+	```
+	
+### Trackmania.UI.ResetProperties
+
+* Name: Trackmania.UI.ResetProperties
+* Type: TriggerModeScriptEventArray
+* Description: Reset the ui properties to their default value.
+* Data:
+	- Version >=2.3.0:
+	```
+	[]
+	```
+	
+### Trackmania.UI.GetProperty
+
+* Name: Trackmania.UI.GetProperty
+* Type: TriggerModeScriptEventArray
+* Description: Request the value of a module property. This method will trigger the "Trackmania.UI.Property" callback.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible", //< The name of the property
+		"responseid" //< Facultative id that will be passed to the "Trackmania.UI.Property" callback.
+	]
+	```
+	
+### Trackmania.UI.GetDefaultProperty
+
+* Name: Trackmania.UI.GetDefaultProperty
+* Type: TriggerModeScriptEventArray
+* Description: Request the default value of a module property. This method will trigger the "Trackmania.UI.Property" callback.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible", //< The name of the property
+		"responseid" //< Facultative id that will be passed to the "Trackmania.UI.Property" callback.
+	]
+	```
+	
+### Trackmania.UI.SetProperty
+
+* Name: Trackmania.UI.SetProperty
+* Type: TriggerModeScriptEventArray
+* Description: Set the value of a module property.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible", //< The name of the property
+		"true" //< The value of the property
+	]
+	```
+	
+### Trackmania.UI.ResetProperty
+
+* Name: Trackmania.UI.ResetProperty
+* Type: TriggerModeScriptEventArray
+* Description: Reset a module property to its default value.
+* Data:
+	- Version >=2.3.0:
+	```
+	[
+		"map_info", //< The name of the module
+		"visible" //< The name of the property
 	]
 	```
 	
