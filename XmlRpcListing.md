@@ -1395,6 +1395,29 @@ Callbacks
 		}"
 	]
 	```
+	- Version >=2.4.0: 
+	The scores table module has a new visible property
+	```
+	[
+		"{
+			"responseid": "xyz" //< Facultative id passed by a script event
+		}",
+		"
+		<ui_properties>
+			...
+			<!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" visible="true" />
+		</ui_properties>
+		",
+		"{
+			...
+			"scorestable": { //< Scores table displayed in the middle of the screen
+				"alt_visible": true,
+				"visible": true
+			}
+		}"
+	]
+	```
 	
 ### Shootmania.UI.Property
 
@@ -2066,6 +2089,29 @@ Callbacks
 		}"
 	]
 	```
+	- Version >=2.4.0: 
+	The scores table module has a new visible property
+	```
+	[
+		"{
+			"responseid": "xyz" //< Facultative id passed by a script event
+		}",
+		"
+		<ui_properties>
+			...
+			<!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" visible="true" />
+		</ui_properties>
+		",
+		"{
+			...
+			"scorestable": { //< Scores table displayed in the middle of the screen
+				"alt_visible": true,
+				"visible": true
+			}
+		}"
+	]
+	```
 	
 ### Trackmania.UI.Property
 
@@ -2363,6 +2409,20 @@ Methods
 	]
 	```
 
+### Maniaplanet.UI.SetScoresTableVisibility
+
+* Name: Maniaplanet.UI.SetScoresTableVisibility
+* Type: TriggerModeScriptEventArray
+* Description: Enable or disable the scores table.
+* Data:
+	- Version >=2.4.0:
+	```
+	[
+		"PlayerLogin", //< The login of the player to update
+		"false" //< false to disable, true to enable
+	]
+	```
+
 ### Maniaplanet.WarmUp.GetStatus
 
 * Name: Maniaplanet.WarmUp.GetStatus
@@ -2515,6 +2575,23 @@ Methods
 		  <endmap_ladder_recap visible="true" />
 		  <!-- Scores table displayed in the middle of the screen -->
 			<scorestable alt_visible="true" />
+		</ui_properties>
+		"
+	]
+	```
+	- Version >=2.4.0: 
+	The scores table module has a new visible property
+	```
+	[
+		"
+		<!--
+		  Each node is optional and can be omitted.
+		  If it's the case then the previous value will be kept.
+		-->
+		<ui_properties>
+			...
+			<!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" visible="true" />
 		</ui_properties>
 		"
 	]
@@ -2881,6 +2958,23 @@ Methods
 			...
 			<!-- Number of players spectating us displayed at the bottom right of the screen -->
 			<viewers_count visible="true" pos="157. -40. 5." />
+		</ui_properties>
+		"
+	]
+	```
+	- Version >=2.4.0: 
+	The scores table module has a new visible property
+	```
+	[
+		"
+		<!--
+		  Each node is optional and can be omitted.
+		  If it's the case then the previous value will be kept.
+		-->
+		<ui_properties>
+			...
+			<!-- Scores table displayed in the middle of the screen -->
+			<scorestable alt_visible="true" visible="true" />
 		</ui_properties>
 		"
 	]
