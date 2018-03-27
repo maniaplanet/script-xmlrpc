@@ -1893,6 +1893,23 @@ Callbacks
 		}"
 	]
 	```
+	- Version >=2.5.0: 
+	The players' scores contain the previous race values.
+	```
+	[
+		"{
+			...
+			"players": [
+				{
+					...
+					"prevracetime": 75642,
+					"prevracerespawns": 3,
+					"prevracecheckpoints": [9845, 32658, 52489, 75642],
+					"prevstuntsscore": 657				
+				}
+			]
+		}"
+	]
 	
 ### Trackmania.PointsRepartition
 
