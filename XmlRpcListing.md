@@ -1736,8 +1736,8 @@ Callbacks
 			"racetime": 123456, //< Total race time in milliseconds
 			"laptime": 45678, //< Lap time in milliseconds
 			"stuntsscore": 3457, //< Stunts score
-			"checkpointinrace": 13, //< Number of checkpoints crossed since the beginning of the race
-			"checkpointinlap": 4, //< Number of checkpoints crossed since the beginning of the lap
+			"checkpointinrace": 3, //< Number of checkpoints crossed since the beginning of the race minus one (index of the checkpoint in the curracecheckpoints array)
+			"checkpointinlap": 0, //< Number of checkpoints crossed since the beginning of the lap minus one (index of the checkpoint in the curlapcheckpoints array)
 			"isendrace": false, //< Is it the finish line checkpoint
 			"isendlap": false, //< Is it the multilap checkpoint
 			"curracecheckpoints": [1234, 5200, 7580, 9000], //< Checkpoints times since the beginning of the race
@@ -1781,8 +1781,8 @@ Callbacks
 			"racetime": 123456, //< Total race time in milliseconds
 			"laptime": 45678, //< Lap time in milliseconds
 			"stuntsscore": 3457, //< Stunts score
-			"checkpointinrace": 13, //< Number of checkpoints crossed since the beginning of the race
-			"checkpointinlap": 4, //< Number of checkpoints crossed since the beginning of the lap
+			"checkpointinrace": 13, //< Number of checkpoints crossed since the beginning of the race minus one
+			"checkpointinlap": 4, //< Number of checkpoints crossed since the beginning of the lap minus one
 			"speed": 456.45, //< Speed of the player in km/h
 			"distance": 398.49 //< Distance traveled by the player since the beginning of the race
 		}"
